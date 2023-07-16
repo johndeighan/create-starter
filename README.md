@@ -3,7 +3,7 @@ How to use
 
 ```bash
 $ cd ~
-$ npm create @jdeighan/starter
-$ npm install
+$ npx @jdeighan/create-starter <proj>
+$ cd <proj>
 $ npm run dev
 ```
