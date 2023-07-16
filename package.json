@@ -12,9 +12,9 @@
 		"./package.json": "./package.json"
 	},
 	"bin": {
-		"create-starter": "npx coffee -c . && node index.js",
-		"starter-create": "npx coffee -c . && node index.js",
-		"starter": "npx coffee -c . && node index.js",
+		"create-starter": "./index.js",
+		"starter-create": "./index.js",
+		"starter": "./index.js",
 		"gen-manifest": "npx coffee -c . && node ./src/bin/gen-manifest.js"
 	},
 	"scripts": {
