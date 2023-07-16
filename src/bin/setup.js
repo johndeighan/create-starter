@@ -1,30 +1,38 @@
 #!/usr/bin/env node
+;
+var checkedOut, gitURL, installed, repoName;
 
-import {execSync} from 'child_process';
+import {
+  // setup.coffee
+  runCmd
+} from '@jdeighan/base-utils';
 
-const repoName = process.argv[2];
-const gitCheckoutCmd = `git clone --depth 1 https://github.com/johndeighan/create-starter ${repoName}`;
-const installDepsCmd = `cd ${repoName} && npm install`;
+repoName = process.argv[2];
 
-const runCmd = (cmd) => {
-	try {
-		execSync(cmd, {stdio: 'inherit'});
-		}
-	catch (err) {
-		console.error(`Failed to execute ${cmd}`, err);
-		return false;
-		}
-	return true;
-	}
+gitURL = "https://github.com/johndeighan/create-starter";
 
 console.log(`Cloning starter repo to ${repoName}`);
-const checkedOut = runCmd(gitCheckoutCmd);
+
+checkedOut = runCmd(`git clone --depth 1 ${gitURL} ${repoName}`);
+
 if (!checkedOut) {
-	process.exit(-1);
-	}
+  console.log("checkout failed");
+  process.exit(-1);
+}
+
 console.log("Installing dependencies...");
-const installed = runCmd(installDepsCmd);
+
+installed = runCmd(`cd ${repoName} && npm install`);
+
 if (!installed) {
-	process.exit(-2);
-	}
+  console.log("dependency install failed");
+  process.exit(-2);
+}
+
 console.log("Success!");
+
+console.log("Please run:");
+
+console.log(`   cd ${repoName}`);
+
+console.log("   npm run dev");
