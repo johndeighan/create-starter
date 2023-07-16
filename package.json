@@ -12,7 +12,7 @@
 		"./package.json": "./package.json"
 	},
 	"bin": {
-		"create-starter": "node ./src/bin/setup.js"
+		"create-starter": "./src/bin/setup.js"
 	},
 	"x-bin": {
 		"create-starter": "./index.js",
