@@ -1,12 +1,30 @@
 #!/usr/bin/env node
 ;
-var checkedOut, gitURL, installed, repoName;
+var checkedOut, gitURL, installed, repoName, runCmd;
 
 import {
   // setup.coffee
-  runCmd
-} from '@jdeighan/base-utils';
+  execSync
+} from 'child_process';
 
+// ---------------------------------------------------------------------------
+runCmd = (cmd) => {
+  var err, result;
+  try {
+    result = execSync(cmd, {
+      stdio: 'pipe',
+      windowsHide: true,
+      encoding: 'utf8'
+    });
+    return result || "<STDOUT>";
+  } catch (error) {
+    err = error;
+    console.error(`Failed to execute cmd '${cmd}'`, err);
+    return undef;
+  }
+};
+
+// ---------------------------------------------------------------------------
 repoName = process.argv[2];
 
 gitURL = "https://github.com/johndeighan/create-starter";

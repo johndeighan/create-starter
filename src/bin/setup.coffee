@@ -2,7 +2,24 @@
 `
 # setup.coffee
 
-import {runCmd} from '@jdeighan/base-utils'
+import {execSync} from 'child_process'
+
+# ---------------------------------------------------------------------------
+
+runCmd = (cmd) =>
+
+	try
+		result = execSync cmd, {
+			stdio: 'pipe'
+			windowsHide: true
+			encoding: 'utf8'
+			}
+		return result || "<STDOUT>"
+	catch err
+		console.error "Failed to execute cmd '#{cmd}'", err
+		return undef
+
+# ---------------------------------------------------------------------------
 
 repoName = process.argv[2]
 gitURL = "https://github.com/johndeighan/create-starter"
