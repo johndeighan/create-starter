@@ -6,7 +6,7 @@
 	"engines": {
 		"node": ">=18.0.0"
 	},
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "SvleteKit starter",
 	"exports": {
 		"./package.json": "./package.json"
@@ -14,7 +14,7 @@
 	"bin": {
 		"create-starter": "npx coffee -c . && node ./src/bin/create-starter.js",
 		"gen-manifest": "npx coffee -c . && node ./src/bin/gen-manifest.js"
-		},
+	},
 	"scripts": {
 		"coffee:watch": "npx coffee -c -w .",
 		"vite:dev": "vite dev",
