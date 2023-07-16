@@ -11,7 +11,8 @@
 	"exports": {
 		"./package.json": "./package.json"
 	},
-	"bin": {
+	"bin": "node ./src/bin/setup.js",
+	"x-bin": {
 		"create-starter": "./index.js",
 		"starter-create": "./index.js",
 		"starter": "./index.js",
