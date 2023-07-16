@@ -1,0 +1,21 @@
+{
+	"id": "starter",
+	"name": "starter",
+	"short_name": "starter",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "any",
+	"theme_color": "#00b1d1",
+	"background_color": "#ffffff",
+	"lang": "en",
+	"dir": "ltr",
+	"icons": [
+		{
+			"src": "favicon.svg",
+			"sizes": "150x150",
+			"purpose": "any",
+			"type": "image/svg"
+			}
+		]
+	}
