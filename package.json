@@ -12,8 +12,10 @@
 		"./package.json": "./package.json"
 	},
 	"bin": {
-		"create-starter": "npx coffee -c . && node ./src/bin/create-starter.js",
-		"gen-manifest": "npx coffee -c . && node ./src/bin/gen-manifest.js"
+		"create-starter": "npx coffee -c . && node ./src/bin/cli.js",
+		"starter-create": "npx coffee -c . && node ./src/bin/cli.js",
+		"starter":        "npx coffee -c . && node ./src/bin/cli.js",
+		"gen-manifest":   "npx coffee -c . && node ./src/bin/gen-manifest.js"
 	},
 	"scripts": {
 		"coffee:watch": "npx coffee -c -w .",
